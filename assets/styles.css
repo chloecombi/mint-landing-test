@@ -1,0 +1,206 @@
+* {
+    list-style: none;
+    text-decoration: none;
+    overflow: hidden;
+    font-family: 'Bakbak One', sans-serif;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Ensure the row is above the background image */
+    padding-inline: 5%;
+}
+
+.row-content-1 {
+    text-align: justify;
+    color: white;
+}
+
+.row-content-1 h2 {
+    font-size: 55px;
+    margin: 0;
+}
+.row-content-1 h1 {
+    font-size: 85px;
+    margin: 0;
+}
+.row-heading {
+    margin-bottom: 20px;
+}
+
+.row-content-2  {
+    width: 40%;
+    height: 50%;
+}
+.row-content-2 img{
+    height: 100%;
+}
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay color */
+    z-index: 0; /* Ensure the overlay is behind the background image */
+}
+
+ .container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: -1; /* Ensure the background image is behind the navbar */
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 10px; /* Adjust padding as needed */
+    position: fixed; /* Position the navbar fixed to the viewport */
+    top: 0;
+    width: 100%; /* Ensure the navbar spans the full width */
+    max-width: 100vw; /* Set maximum width to the viewport width */
+    background-color: rgba(0, 0, 0, 0.253); /* Transparent background */
+    z-index: 5; /* Ensure the navbar is above the background image */
+}
+
+nav #logo {
+    padding-inline: 10%;
+}
+
+nav .logo {
+    width: 50px;
+    height: 50px;
+    margin: 20px;
+}
+
+nav ul {
+    padding-inline: 10%;
+}
+
+nav ul a {
+    color: white;
+    transition: transform 0.3s ease; /* Add transition effect */
+}
+nav ul a:hover{
+    transform: translatex(10px); /* Move the button 5px up when hovered */
+    color: #fe8700;
+}
+
+
+
+.mint-btn {
+    width: 200px;
+    height: 80px;
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: #fee600;
+    border-color: #fee600;
+    transition: transform 0.3s ease; /* Add transition effect */
+}
+
+.mint-btn:hover {
+    transform: translatex(10px); /* Move the button 5px up when hovered */
+}
+
+.yellow {
+    color: #fee600;
+}
+
+.btn-mint:hover , .mint-btn:hover{
+    cursor: pointer;
+}
+
+/* Original CSS code */
+
+/* Add media query for mobile devices */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column; /* Change flex direction to column for mobile */
+        align-items: center;
+    }
+
+    .row-content-1 {
+        text-align: center; /* Align text to center for mobile */
+    }
+
+    .row-content-1 h2 {
+        font-size: 40px; /* Reduce font size for h2 on mobile */
+    }
+
+    .row-content-1 h1 {
+        font-size: 60px; /* Reduce font size for h1 on mobile */
+    }
+
+    .row-content-2 {
+        display: none; /* Hide row-content-2 on mobile */
+    }
+}
+/* Hide all code when inspecting */
+@media all and (hover:none) and (pointer:coarse) {
+    html::after {
+        content: "";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        color: #000000;
+        font-size: 24px;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        z-index: 99999;
+    }
+}
+/* Hide all code when inspecting or viewing source */
+@media all and ((hover:none) and (pointer:coarse)), (min-width: 0) and (max-width: 0) {
+    html::after {
+        content: "";
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        color: #000000;
+        font-size: 24px;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        z-index: 99999;
+    }
+}
+
